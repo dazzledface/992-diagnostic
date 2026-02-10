@@ -484,1164 +484,1180 @@
         </p>
       </div>
 -->
-      <div class="name-card">
-        <label for="studentName"
-          >Your name <span style="color: var(--accent)">*</span></label
+      <form id="diagnostic-1">
+        <div class="name-card">
+          <label for="studentName"
+            >Your name <span style="color: var(--accent)">*</span></label
+          >
+          <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your full name"
+            name="name"
+            required
+          />
+        </div>
+
+        <!-- ============ SECTION A: Sentence-Level Clarity ============ -->
+        <div class="section-header">
+          <h2>Section A: Sentence-Level Clarity</h2>
+          <div class="section-desc">
+            Choose the clearest, most concise version of each sentence.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="A" data-correct="B">
+          <div class="question-number">Question 1</div>
+          <div class="question-text">Which version is clearest?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q1" value="A" /> Due to the fact that
+              the server was undergoing maintenance, users were not able to
+              access the portal.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q1" value="B" /> The server was down
+              for maintenance, so users could not access the portal.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q1" value="C" /> Users could not access
+              the portal because of the server undergoing maintenance at that
+              time.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q1" value="D" /> Access to the portal
+              was not available to users as a result of server maintenance being
+              performed.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="A" data-correct="B">
+          <div class="question-number">Question 2</div>
+          <div class="question-text">Which version is clearest?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q2" value="A" /> It is important to
+              note that the function returns a null value in cases where the
+              input is invalid.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q2" value="B" /> The function returns
+              null if the input is invalid.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q2" value="C" /> When the input that is
+              provided is not valid, what the function does is return a null
+              value.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q2" value="D" /> A null value is what
+              gets returned by the function when it receives invalid
+              input.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="A" data-correct="C">
+          <div class="question-number">Question 3</div>
+          <div class="question-text">Which version is clearest?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q3" value="A" /> There are several
+              factors that need to be taken into consideration before
+              deploying.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q3" value="B" /> Before deploying,
+              consider several factors.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q3" value="C" /> Several factors should
+              be considered before you deploy.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q3" value="D" /> Consideration of
+              several factors is needed prior to deployment.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="A" data-correct="C">
+          <div class="question-number">Question 4</div>
+          <div class="question-text">Which version is clearest?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q4" value="A" /> The system performs
+              the operation of checking the user&rsquo;s credentials.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q4" value="B" /> What happens is the
+              system checks to see if the user&rsquo;s credentials are
+              correct.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q4" value="C" /> The system verifies
+              the user&rsquo;s credentials.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q4" value="D" /> Verification of user
+              credentials is performed by the system.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="A" data-correct="B">
+          <div class="question-number">Question 5</div>
+          <div class="question-text">Which version is clearest?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q5" value="A" /> This is a feature
+              which allows users to be able to export their data.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q5" value="B" /> This feature lets
+              users export their data.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q5" value="C" /> Users are allowed to
+              perform data exporting by this feature.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q5" value="D" /> The feature provides
+              users with the ability to export data that belongs to them.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- ============ SECTION B: Identifying Common Errors ============ -->
+        <div class="section-header">
+          <h2>Section B: Identifying Common Errors</h2>
+          <div class="section-desc">
+            Each sentence contains an error. Identify the type of error.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="B" data-correct="B">
+          <div class="question-number">Question 6</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The data shows that the system performed well, the
+              response times were under 50ms.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q6" value="A" /> Subject-verb
+              agreement</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q6" value="B" /> Comma splice</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q6" value="C" /> Dangling
+              modifier</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q6" value="D" /> No error</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="B" data-correct="B">
+          <div class="question-number">Question 7</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;After running the tests, the results were
+              promising.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q7" value="A" /> Comma splice</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q7" value="B" /> Dangling
+              modifier</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q7" value="C" /> Pronoun-antecedent
+              disagreement</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q7" value="D" /> No error</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="B" data-correct="C">
+          <div class="question-number">Question 8</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;Each developer should commit their code before the end of
+              the sprint.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q8" value="A" /> Subject-verb
+              agreement</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q8" value="B" /> Comma splice</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q8" value="C" /> No error (this is
+              acceptable in modern usage)</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q8" value="D" /> Dangling
+              modifier</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="B" data-correct="B">
+          <div class="question-number">Question 9</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The team has decided to delay the release, however, more
+              testing is needed.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q9" value="A" /> Dangling
+              modifier</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q9" value="B" /> Incorrect use of a
+              conjunctive adverb (punctuation error)</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q9" value="C" /> Subject-verb
+              agreement</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q9" value="D" /> No error</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="B" data-correct="A">
+          <div class="question-number">Question 10</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The API, along with its documentation and sample code, are
+              available on the developer portal.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q10" value="A" /> Subject-verb
+              agreement</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q10" value="B" /> Comma splice</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q10" value="C" /> Dangling
+              modifier</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q10" value="D" /> No error</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- ============ SECTION C: Verb-to-Noun Conversion ============ -->
+        <div class="section-header">
+          <h2>Section C: Verb-to-Noun Conversion</h2>
+          <div class="section-desc">
+            Each sentence contains verbs awkwardly turned into nouns
+            (&ldquo;nominalizations&rdquo;). Rewrite using strong verbs instead.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="C" data-type="short">
+          <div class="question-number">Question 11</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;The utilization of various methodologies for the
+              assessment of cellular proliferation rates was accomplished by the
+              research team.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q11"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="C" data-type="short">
+          <div class="question-number">Question 12</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;The establishment of communication between distributed
+              agents was achieved via the implementation of a lightweight
+              protocol.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q12"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="C" data-type="short">
+          <div class="question-number">Question 13</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;In order to provide an enhancement to robustness, a
+              modification of the loss function was undertaken during the
+              training phase.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q13"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="C" data-type="short">
+          <div class="question-number">Question 14</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;The incorporation of contextual information into the model
+              architecture allows for the facilitation of improved task
+              performance.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q14"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <!-- ============ SECTION D: Cutting the Clutter ============ -->
+        <div class="section-header">
+          <h2>Section D: Cutting the Clutter</h2>
+          <div class="section-desc">
+            Each item contains a specific type of clutter. Identify the clutter
+            type (where asked), then fix it.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="D" data-type="short">
+          <div class="question-number">Question 15</div>
+          <div class="question-text">
+            Identify the clutter type and rewrite:
+            <span class="quoted"
+              >&ldquo;It is generally understood that the primary objective of
+              the investigation was the elucidation of the underlying
+              mechanisms.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q15"
+            placeholder="Clutter type: &#10;Rewrite: "
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="D" data-type="short">
+          <div class="question-number">Question 16</div>
+          <div class="question-text">
+            Identify the clutter type and rewrite:
+            <span class="quoted"
+              >&ldquo;There are a large number of studies that indicate the
+              importance of sleep for overall health.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q16"
+            placeholder="Clutter type: &#10;Rewrite: "
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="D" data-type="short">
+          <div class="question-number">Question 17</div>
+          <div class="question-text">
+            Identify the clutter type and rewrite:
+            <span class="quoted"
+              >&ldquo;The researchers did not believe the proposed algorithm was
+              ineffective at handling edge cases.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q17"
+            placeholder="Clutter type: &#10;Rewrite: "
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="D" data-correct="B">
+          <div class="question-number">Question 18</div>
+          <div class="question-text">
+            Which is the clearest revision of:
+            <span class="quoted"
+              >&ldquo;Our DNN-based NLP pipeline achieves SOTA performance on
+              standard QoS benchmarks in CPS environments.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q18" value="A" /> Our deep neural
+              network&ndash;based natural language processing pipeline achieves
+              state-of-the-art performance on standard quality-of-service
+              benchmarks in cyber-physical system environments.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q18" value="B" /> Our deep learning
+              pipeline for natural language processing achieves the best
+              published results on standard quality-of-service benchmarks for
+              cyber-physical systems.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q18" value="C" /> We developed a DNN
+              NLP pipeline that gets SOTA QoS in CPS.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q18" value="D" /> Using deep neural
+              networks, we built a natural language processing pipeline. It
+              achieves results. The results are state-of-the-art. The benchmarks
+              are for quality of service. The environments are
+              cyber-physical.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="D" data-correct="B">
+          <div class="question-number">Question 19</div>
+          <div class="question-text">
+            What is the best substitute for:
+            <span class="quoted">&ldquo;due to the fact that&rdquo;</span>?
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q19" value="A" /> owing to the
+              circumstances surrounding</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q19" value="B" /> because</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q19" value="C" /> in light of the
+              reality that</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q19" value="D" /> for the reason
+              that</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="D" data-correct="B">
+          <div class="question-number">Question 20</div>
+          <div class="question-text">
+            Which best removes unnecessary adverbs?
+            <span class="quoted"
+              >Original: &ldquo;The system very clearly and quite effectively
+              basically handles all of the really important edge
+              cases.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q20" value="A" /> The system clearly
+              and effectively handles the important edge cases.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q20" value="B" /> The system handles
+              the important edge cases.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q20" value="C" /> The system very
+              effectively handles edge cases.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q20" value="D" /> The system basically
+              handles all edge cases quite well.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- ============ SECTION E: Active vs. Passive Voice ============ -->
+        <div class="section-header">
+          <h2>Section E: Active vs. Passive Voice</h2>
+          <div class="section-desc">
+            Rewrite each sentence in the active voice with clear
+            subject-verb-object order.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="E" data-type="short">
+          <div class="question-number">Question 21</div>
+          <div class="question-text">
+            Rewrite in active voice:
+            <span class="quoted"
+              >&ldquo;The experiment was conducted by the team using a modified
+              protocol.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q21"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="E" data-type="short">
+          <div class="question-number">Question 22</div>
+          <div class="question-text">
+            Rewrite in active voice:
+            <span class="quoted"
+              >&ldquo;A decision was made to perform the evaluation using
+              metrics that are generally considered to be representative of
+              real-world scenarios.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q22"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="E" data-type="short">
+          <div class="question-number">Question 23</div>
+          <div class="question-text">
+            Rewrite in active voice:
+            <span class="quoted"
+              >&ldquo;The results can be seen to suggest that there exists a
+              potential correlation between model complexity and observed
+              efficiency gains.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q23"
+            placeholder="Write your revised sentence..."
+          ></textarea>
+        </div>
+
+        <!-- ============ SECTION F: Parallel Structure ============ -->
+        <div class="section-header">
+          <h2>Section F: Parallel Structure</h2>
+          <div class="section-desc">
+            Choose the version that uses correct parallel structure.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="F" data-correct="B">
+          <div class="question-number">Question 24</div>
+          <div class="question-text">Which list is parallel?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q24" value="A" /> The tool can parse
+              logs, filtering data, and to generate reports.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q24" value="B" /> The tool can parse
+              logs, filter data, and generate reports.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q24" value="C" /> The tool can parse
+              logs, it filters data, and report generation.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q24" value="D" /> Parsing logs,
+              filtering of data, and generating reports are what the tool can
+              do.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="F" data-correct="B">
+          <div class="question-number">Question 25</div>
+          <div class="question-text">Which sentence is parallel?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q25" value="A" /> The update improves
+              performance, fixes bugs, and the interface is redesigned.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q25" value="B" /> The update improves
+              performance, fixes bugs, and redesigns the interface.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q25" value="C" /> The update is
+              improving performance, fixed bugs, and will redesign the
+              interface.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q25" value="D" /> Performance
+              improvement, bug fixing, and the interface being redesigned are in
+              the update.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="F" data-correct="B">
+          <div class="question-number">Question 26</div>
+          <div class="question-text">Which list is parallel?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q26" value="A" /> Before deploying, you
+              should: review the code, running the test suite, and update the
+              documentation.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q26" value="B" /> Before deploying, you
+              should: review the code, run the test suite, and update the
+              documentation.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q26" value="C" /> Before deploying:
+              code review, running tests, and documentation should be
+              updated.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q26" value="D" /> Before deploying,
+              make sure to: have the code reviewed, that you run the test suite,
+              and updating documentation.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- ============ SECTION G: Word Choice ============ -->
+        <div class="section-header">
+          <h2>Section G: Word Choice and Precision</h2>
+          <div class="section-desc">
+            Choose the word or phrase that best completes each sentence in a
+            technical context.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="G" data-correct="A">
+          <div class="question-number">Question 27</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The new caching layer significantly ______ response
+              times.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q27" value="A" /> reduces</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q27" value="B" /> diminishes</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q27" value="C" /> lessens</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q27" value="D" /> shrinks</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="G" data-correct="B">
+          <div class="question-number">Question 28</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The test results are ______ our hypothesis.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q28" value="A" /> confirmative
+              of</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q28" value="B" /> consistent
+              with</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q28" value="C" /> supportive to</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q28" value="D" /> in agreement
+              to</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="G" data-correct="B">
+          <div class="question-number">Question 29</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;______ the migration, all services will be temporarily
+              unavailable.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q29" value="A" /> While</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q29" value="B" /> During</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q29" value="C" /> Throughout the course
+              of</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q29" value="D" /> In the time of</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="G" data-correct="A">
+          <div class="question-number">Question 30</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;This approach is ______ the previous method because it
+              uses less memory.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q30" value="A" /> preferable to</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q30" value="B" /> more better
+              than</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q30" value="C" /> more preferable
+              than</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q30" value="D" /> better suited
+              compared to</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="G" data-correct="A">
+          <div class="question-number">Question 31</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;We ______ the issue to a misconfigured firewall
+              rule.&rdquo;</span
+            >
+          </div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q31" value="A" /> traced</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q31" value="B" /> found</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q31" value="C" /> discovered</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q31" value="D" /> uncovered</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- ============ SECTION H: Transitions ============ -->
+        <div class="section-header">
+          <h2>Section H: Transitions and Cohesion</h2>
+          <div class="section-desc">
+            Fill in an appropriate transition word or phrase for each blank.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="H" data-type="short">
+          <div class="question-number">Question 32</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The initial implementation used a brute-force algorithm.
+              ____________, the team rewrote it using dynamic programming to
+              improve efficiency.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea short"
+            name="q32"
+            placeholder="Transition word or phrase..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="H" data-type="short">
+          <div class="question-number">Question 33</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The API supports both JSON and XML response formats.
+              ____________, most developers prefer JSON for its
+              simplicity.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea short"
+            name="q33"
+            placeholder="Transition word or phrase..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="H" data-type="short">
+          <div class="question-number">Question 34</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;Unit tests passed on all modules. ____________, the
+              integration tests revealed two critical failures.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea short"
+            name="q34"
+            placeholder="Transition word or phrase..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="H" data-type="short">
+          <div class="question-number">Question 35</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The team considered building the feature in-house.
+              ____________, they decided to use an open-source library because
+              it was already well-tested.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea short"
+            name="q35"
+            placeholder="Transition word or phrase..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="H" data-type="short">
+          <div class="question-number">Question 36</div>
+          <div class="question-text">
+            <span class="quoted"
+              >&ldquo;The database handles read-heavy workloads efficiently. It
+              is ____________ not optimized for frequent writes.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea short"
+            name="q36"
+            placeholder="Transition word or phrase..."
+          ></textarea>
+        </div>
+
+        <!-- ============ SECTION I: Topic Sentences ============ -->
+        <div class="section-header">
+          <h2>Section I: Topic Sentences</h2>
+          <div class="section-desc">
+            A good topic sentence makes a clear, specific claim. Choose the
+            stronger option, then write your own.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="I" data-correct="B">
+          <div class="question-number">Question 37</div>
+          <div class="question-text">Which is the stronger topic sentence?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q37" value="A" /> Several factors must
+              be considered in the evaluation of system performance.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q37" value="B" /> System performance
+              depends primarily on latency, throughput, and fault
+              tolerance.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="I" data-correct="B">
+          <div class="question-number">Question 38</div>
+          <div class="question-text">Which is the stronger topic sentence?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q38" value="A" /> Recent advances in
+              distributed computing have led to increased interest in scalable
+              architectures.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q38" value="B" /> Scalable distributed
+              systems must balance communication overhead, synchronization cost,
+              and fault tolerance.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="I" data-correct="B">
+          <div class="question-number">Question 39</div>
+          <div class="question-text">Which is the stronger topic sentence?</div>
+          <div class="options">
+            <label class="option-label"
+              ><input type="radio" name="q39" value="A" /> There are many
+              approaches to handling missing data in machine learning
+              pipelines.</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="q39" value="B" /> Imputation
+              outperforms deletion for handling missing data when the
+              missingness is not random.</label
+            >
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question-card" data-section="I" data-type="short">
+          <div class="question-number">Question 40</div>
+          <div class="question-text">
+            Improve this weak topic sentence by making it specific and
+            claim-driven:
+            <span class="quoted"
+              >&ldquo;Security is an important consideration in web application
+              development.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q40"
+            placeholder="Write a stronger topic sentence..."
+          ></textarea>
+        </div>
+
+        <!-- ============ SECTION J: Information Flow & Emphasis ============ -->
+        <div class="section-header">
+          <h2>Section J: Information Flow and Emphasis</h2>
+          <div class="section-desc">
+            Good prose moves from familiar to new information, and places the
+            most important point at the end (the &ldquo;stress position&rdquo;).
+            Rewrite each example to improve flow.
+          </div>
+        </div>
+
+        <div class="question-card" data-section="J" data-type="short">
+          <div class="question-number">Question 41</div>
+          <div class="question-text">
+            Rewrite for better flow:
+            <span class="quoted"
+              >&ldquo;A significant improvement in accuracy was observed after
+              parameter tuning. The model&rsquo;s hyperparameters were adjusted
+              using cross-validation.&rdquo;</span
+            ><span class="hint"
+              >Hint: put the cause before the effect, and lead with familiar
+              information.</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q41"
+            placeholder="Write your revised version..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="J" data-type="short">
+          <div class="question-number">Question 42</div>
+          <div class="question-text">
+            Rewrite for better flow:
+            <span class="quoted"
+              >&ldquo;An increase in training time was caused by the addition of
+              regularization terms. The model complexity increased as a
+              result.&rdquo;</span
+            ><span class="hint"
+              >Hint: combine into one sentence with a logical cause &rarr;
+              effect flow.</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q42"
+            placeholder="Write your revised version..."
+          ></textarea>
+        </div>
+
+        <div class="question-card" data-section="J" data-type="short">
+          <div class="question-number">Question 43</div>
+          <div class="question-text">
+            Rewrite for better emphasis:
+            <span class="quoted"
+              >&ldquo;In addition to being more efficient, the algorithm is also
+              faster and uses fewer resources and has better accuracy than
+              previous approaches.&rdquo;</span
+            ><span class="hint"
+              >Hint: the most important point should come last, in the stress
+              position. Decide what matters most.</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q43"
+            placeholder="Write your revised version..."
+          ></textarea>
+        </div>
+
+        <!-- ============ SECTION K: Paragraph Diagnosis ============ -->
+        <div class="section-header">
+          <h2>Section K: Paragraph Diagnosis</h2>
+          <div class="section-desc">
+            Read the following paragraph and answer the questions below it.
+          </div>
+        </div>
+
+        <div
+          class="question-card"
+          data-section="K"
+          data-type="short"
+          style="border-left-color: var(--accent)"
         >
-        <input
-          type="text"
-          id="studentName"
-          placeholder="Enter your full name"
-          required
-        />
-      </div>
+          <div class="passage-box">
+            The proposed framework integrates multiple modules for data
+            preprocessing, feature extraction, and classification. Experimental
+            results demonstrate improved performance across benchmark datasets.
+            The architecture is flexible and can be extended to additional
+            tasks. Training was conducted using standard optimization
+            techniques.
+          </div>
+          <div class="question-number">Question 44</div>
+          <div class="question-text">
+            What is this paragraph&rsquo;s main claim? Write it in one sentence.
+            (If there is no clear main claim, say so.)
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q44"
+            placeholder="Main claim..."
+          ></textarea>
+        </div>
 
-      <!-- ============ SECTION A: Sentence-Level Clarity ============ -->
-      <div class="section-header">
-        <h2>Section A: Sentence-Level Clarity</h2>
-        <div class="section-desc">
-          Choose the clearest, most concise version of each sentence.
+        <div class="question-card" data-section="K" data-type="short">
+          <div class="question-number">Question 45</div>
+          <div class="question-text">
+            This paragraph is trying to do too many jobs at once. List the
+            separate jobs it attempts.
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q45"
+            placeholder="List the jobs..."
+          ></textarea>
         </div>
-      </div>
 
-      <div class="question-card" data-section="A" data-correct="B">
-        <div class="question-number">Question 1</div>
-        <div class="question-text">Which version is clearest?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q1" value="A" /> Due to the fact that the
-            server was undergoing maintenance, users were not able to access the
-            portal.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q1" value="B" /> The server was down for
-            maintenance, so users could not access the portal.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q1" value="C" /> Users could not access
-            the portal because of the server undergoing maintenance at that
-            time.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q1" value="D" /> Access to the portal was
-            not available to users as a result of server maintenance being
-            performed.</label
-          >
+        <div class="question-card" data-section="K" data-type="short">
+          <div class="question-number">Question 46</div>
+          <div class="question-text">
+            Rewrite this as two shorter paragraphs, each with a single clear
+            job. You may add a sentence or two to make each paragraph coherent.
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q46"
+            placeholder="Paragraph 1:&#10;&#10;Paragraph 2:"
+            style="min-height: 140px"
+          ></textarea>
         </div>
-        <div class="feedback"></div>
-      </div>
 
-      <div class="question-card" data-section="A" data-correct="B">
-        <div class="question-number">Question 2</div>
-        <div class="question-text">Which version is clearest?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q2" value="A" /> It is important to note
-            that the function returns a null value in cases where the input is
-            invalid.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q2" value="B" /> The function returns
-            null if the input is invalid.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q2" value="C" /> When the input that is
-            provided is not valid, what the function does is return a null
-            value.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q2" value="D" /> A null value is what
-            gets returned by the function when it receives invalid input.</label
-          >
+        <!-- ============ SECTION L: Full Revision ============ -->
+        <div class="section-header">
+          <h2>Section L: Full Revision</h2>
+          <div class="section-desc">
+            Rewrite each passage to improve clarity. Apply everything: cut
+            clutter, use strong verbs, fix voice, improve flow.
+          </div>
         </div>
-        <div class="feedback"></div>
-      </div>
 
-      <div class="question-card" data-section="A" data-correct="C">
-        <div class="question-number">Question 3</div>
-        <div class="question-text">Which version is clearest?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q3" value="A" /> There are several
-            factors that need to be taken into consideration before
-            deploying.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q3" value="B" /> Before deploying,
-            consider several factors.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q3" value="C" /> Several factors should
-            be considered before you deploy.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q3" value="D" /> Consideration of several
-            factors is needed prior to deployment.</label
-          >
+        <div class="question-card" data-section="L" data-type="short">
+          <div class="question-number">Question 47</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;What the system does is it takes the input that the user
+              provides and then it processes it and after that it returns the
+              output to the user.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q47"
+            placeholder="Write your revised sentence..."
+          ></textarea>
         </div>
-        <div class="feedback"></div>
-      </div>
 
-      <div class="question-card" data-section="A" data-correct="C">
-        <div class="question-number">Question 4</div>
-        <div class="question-text">Which version is clearest?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q4" value="A" /> The system performs the
-            operation of checking the user&rsquo;s credentials.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q4" value="B" /> What happens is the
-            system checks to see if the user&rsquo;s credentials are
-            correct.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q4" value="C" /> The system verifies the
-            user&rsquo;s credentials.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q4" value="D" /> Verification of user
-            credentials is performed by the system.</label
-          >
+        <div class="question-card" data-section="L" data-type="short">
+          <div class="question-number">Question 48</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;It should be noted that in the event that the connection
+              times out, the system will attempt to retry the connection a total
+              of three times before it gives up and throws an
+              error.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q48"
+            placeholder="Write your revised sentence..."
+          ></textarea>
         </div>
-        <div class="feedback"></div>
-      </div>
 
-      <div class="question-card" data-section="A" data-correct="B">
-        <div class="question-number">Question 5</div>
-        <div class="question-text">Which version is clearest?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q5" value="A" /> This is a feature which
-            allows users to be able to export their data.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q5" value="B" /> This feature lets users
-            export their data.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q5" value="C" /> Users are allowed to
-            perform data exporting by this feature.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q5" value="D" /> The feature provides
-            users with the ability to export data that belongs to them.</label
-          >
+        <div class="question-card" data-section="L" data-type="short">
+          <div class="question-number">Question 49</div>
+          <div class="question-text">
+            Rewrite:
+            <span class="quoted"
+              >&ldquo;The reason why we chose Python for this project is because
+              Python has a large number of machine learning libraries available
+              that can be used.&rdquo;</span
+            >
+          </div>
+          <textarea
+            class="answer-textarea"
+            name="q49"
+            placeholder="Write your revised sentence..."
+          ></textarea>
         </div>
-        <div class="feedback"></div>
-      </div>
 
-      <!-- ============ SECTION B: Identifying Common Errors ============ -->
-      <div class="section-header">
-        <h2>Section B: Identifying Common Errors</h2>
-        <div class="section-desc">
-          Each sentence contains an error. Identify the type of error.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="B" data-correct="B">
-        <div class="question-number">Question 6</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The data shows that the system performed well, the response
-            times were under 50ms.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q6" value="A" /> Subject-verb
-            agreement</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q6" value="B" /> Comma splice</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q6" value="C" /> Dangling modifier</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q6" value="D" /> No error</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="B" data-correct="B">
-        <div class="question-number">Question 7</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;After running the tests, the results were
-            promising.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q7" value="A" /> Comma splice</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q7" value="B" /> Dangling modifier</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q7" value="C" /> Pronoun-antecedent
-            disagreement</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q7" value="D" /> No error</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="B" data-correct="C">
-        <div class="question-number">Question 8</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;Each developer should commit their code before the end of
-            the sprint.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q8" value="A" /> Subject-verb
-            agreement</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q8" value="B" /> Comma splice</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q8" value="C" /> No error (this is
-            acceptable in modern usage)</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q8" value="D" /> Dangling modifier</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="B" data-correct="B">
-        <div class="question-number">Question 9</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The team has decided to delay the release, however, more
-            testing is needed.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q9" value="A" /> Dangling modifier</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q9" value="B" /> Incorrect use of a
-            conjunctive adverb (punctuation error)</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q9" value="C" /> Subject-verb
-            agreement</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q9" value="D" /> No error</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="B" data-correct="A">
-        <div class="question-number">Question 10</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The API, along with its documentation and sample code, are
-            available on the developer portal.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q10" value="A" /> Subject-verb
-            agreement</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q10" value="B" /> Comma splice</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q10" value="C" /> Dangling
-            modifier</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q10" value="D" /> No error</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <!-- ============ SECTION C: Verb-to-Noun Conversion ============ -->
-      <div class="section-header">
-        <h2>Section C: Verb-to-Noun Conversion</h2>
-        <div class="section-desc">
-          Each sentence contains verbs awkwardly turned into nouns
-          (&ldquo;nominalizations&rdquo;). Rewrite using strong verbs instead.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="C" data-type="short">
-        <div class="question-number">Question 11</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;The utilization of various methodologies for the assessment
-            of cellular proliferation rates was accomplished by the research
-            team.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q11"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="C" data-type="short">
-        <div class="question-number">Question 12</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;The establishment of communication between distributed
-            agents was achieved via the implementation of a lightweight
-            protocol.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q12"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="C" data-type="short">
-        <div class="question-number">Question 13</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;In order to provide an enhancement to robustness, a
-            modification of the loss function was undertaken during the training
-            phase.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q13"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="C" data-type="short">
-        <div class="question-number">Question 14</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;The incorporation of contextual information into the model
-            architecture allows for the facilitation of improved task
-            performance.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q14"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION D: Cutting the Clutter ============ -->
-      <div class="section-header">
-        <h2>Section D: Cutting the Clutter</h2>
-        <div class="section-desc">
-          Each item contains a specific type of clutter. Identify the clutter
-          type (where asked), then fix it.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="D" data-type="short">
-        <div class="question-number">Question 15</div>
-        <div class="question-text">
-          Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;It is generally understood that the primary objective of the
-            investigation was the elucidation of the underlying
-            mechanisms.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q15"
-          placeholder="Clutter type: &#10;Rewrite: "
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="D" data-type="short">
-        <div class="question-number">Question 16</div>
-        <div class="question-text">
-          Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;There are a large number of studies that indicate the
-            importance of sleep for overall health.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q16"
-          placeholder="Clutter type: &#10;Rewrite: "
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="D" data-type="short">
-        <div class="question-number">Question 17</div>
-        <div class="question-text">
-          Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;The researchers did not believe the proposed algorithm was
-            ineffective at handling edge cases.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q17"
-          placeholder="Clutter type: &#10;Rewrite: "
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="D" data-correct="B">
-        <div class="question-number">Question 18</div>
-        <div class="question-text">
-          Which is the clearest revision of:
-          <span class="quoted"
-            >&ldquo;Our DNN-based NLP pipeline achieves SOTA performance on
-            standard QoS benchmarks in CPS environments.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q18" value="A" /> Our deep neural
-            network&ndash;based natural language processing pipeline achieves
-            state-of-the-art performance on standard quality-of-service
-            benchmarks in cyber-physical system environments.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q18" value="B" /> Our deep learning
-            pipeline for natural language processing achieves the best published
-            results on standard quality-of-service benchmarks for cyber-physical
-            systems.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q18" value="C" /> We developed a DNN NLP
-            pipeline that gets SOTA QoS in CPS.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q18" value="D" /> Using deep neural
-            networks, we built a natural language processing pipeline. It
-            achieves results. The results are state-of-the-art. The benchmarks
-            are for quality of service. The environments are
-            cyber-physical.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="D" data-correct="B">
-        <div class="question-number">Question 19</div>
-        <div class="question-text">
-          What is the best substitute for:
-          <span class="quoted">&ldquo;due to the fact that&rdquo;</span>?
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q19" value="A" /> owing to the
-            circumstances surrounding</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q19" value="B" /> because</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q19" value="C" /> in light of the reality
-            that</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q19" value="D" /> for the reason
-            that</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="D" data-correct="B">
-        <div class="question-number">Question 20</div>
-        <div class="question-text">
-          Which best removes unnecessary adverbs?
-          <span class="quoted"
-            >Original: &ldquo;The system very clearly and quite effectively
-            basically handles all of the really important edge
-            cases.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q20" value="A" /> The system clearly and
-            effectively handles the important edge cases.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q20" value="B" /> The system handles the
-            important edge cases.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q20" value="C" /> The system very
-            effectively handles edge cases.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q20" value="D" /> The system basically
-            handles all edge cases quite well.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <!-- ============ SECTION E: Active vs. Passive Voice ============ -->
-      <div class="section-header">
-        <h2>Section E: Active vs. Passive Voice</h2>
-        <div class="section-desc">
-          Rewrite each sentence in the active voice with clear
-          subject-verb-object order.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="E" data-type="short">
-        <div class="question-number">Question 21</div>
-        <div class="question-text">
-          Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;The experiment was conducted by the team using a modified
-            protocol.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q21"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="E" data-type="short">
-        <div class="question-number">Question 22</div>
-        <div class="question-text">
-          Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;A decision was made to perform the evaluation using metrics
-            that are generally considered to be representative of real-world
-            scenarios.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q22"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="E" data-type="short">
-        <div class="question-number">Question 23</div>
-        <div class="question-text">
-          Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;The results can be seen to suggest that there exists a
-            potential correlation between model complexity and observed
-            efficiency gains.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q23"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION F: Parallel Structure ============ -->
-      <div class="section-header">
-        <h2>Section F: Parallel Structure</h2>
-        <div class="section-desc">
-          Choose the version that uses correct parallel structure.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="F" data-correct="B">
-        <div class="question-number">Question 24</div>
-        <div class="question-text">Which list is parallel?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q24" value="A" /> The tool can parse
-            logs, filtering data, and to generate reports.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q24" value="B" /> The tool can parse
-            logs, filter data, and generate reports.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q24" value="C" /> The tool can parse
-            logs, it filters data, and report generation.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q24" value="D" /> Parsing logs, filtering
-            of data, and generating reports are what the tool can do.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="F" data-correct="B">
-        <div class="question-number">Question 25</div>
-        <div class="question-text">Which sentence is parallel?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q25" value="A" /> The update improves
-            performance, fixes bugs, and the interface is redesigned.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q25" value="B" /> The update improves
-            performance, fixes bugs, and redesigns the interface.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q25" value="C" /> The update is improving
-            performance, fixed bugs, and will redesign the interface.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q25" value="D" /> Performance
-            improvement, bug fixing, and the interface being redesigned are in
-            the update.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="F" data-correct="B">
-        <div class="question-number">Question 26</div>
-        <div class="question-text">Which list is parallel?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q26" value="A" /> Before deploying, you
-            should: review the code, running the test suite, and update the
-            documentation.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q26" value="B" /> Before deploying, you
-            should: review the code, run the test suite, and update the
-            documentation.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q26" value="C" /> Before deploying: code
-            review, running tests, and documentation should be updated.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q26" value="D" /> Before deploying, make
-            sure to: have the code reviewed, that you run the test suite, and
-            updating documentation.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <!-- ============ SECTION G: Word Choice ============ -->
-      <div class="section-header">
-        <h2>Section G: Word Choice and Precision</h2>
-        <div class="section-desc">
-          Choose the word or phrase that best completes each sentence in a
-          technical context.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="G" data-correct="A">
-        <div class="question-number">Question 27</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The new caching layer significantly ______ response
-            times.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q27" value="A" /> reduces</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q27" value="B" /> diminishes</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q27" value="C" /> lessens</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q27" value="D" /> shrinks</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="G" data-correct="B">
-        <div class="question-number">Question 28</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The test results are ______ our hypothesis.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q28" value="A" /> confirmative of</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q28" value="B" /> consistent with</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q28" value="C" /> supportive to</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q28" value="D" /> in agreement to</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="G" data-correct="B">
-        <div class="question-number">Question 29</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;______ the migration, all services will be temporarily
-            unavailable.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q29" value="A" /> While</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q29" value="B" /> During</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q29" value="C" /> Throughout the course
-            of</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q29" value="D" /> In the time of</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="G" data-correct="A">
-        <div class="question-number">Question 30</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;This approach is ______ the previous method because it uses
-            less memory.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q30" value="A" /> preferable to</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q30" value="B" /> more better than</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q30" value="C" /> more preferable
-            than</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q30" value="D" /> better suited compared
-            to</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="G" data-correct="A">
-        <div class="question-number">Question 31</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;We ______ the issue to a misconfigured firewall
-            rule.&rdquo;</span
-          >
-        </div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q31" value="A" /> traced</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q31" value="B" /> found</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q31" value="C" /> discovered</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q31" value="D" /> uncovered</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <!-- ============ SECTION H: Transitions ============ -->
-      <div class="section-header">
-        <h2>Section H: Transitions and Cohesion</h2>
-        <div class="section-desc">
-          Fill in an appropriate transition word or phrase for each blank.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="H" data-type="short">
-        <div class="question-number">Question 32</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The initial implementation used a brute-force algorithm.
-            ____________, the team rewrote it using dynamic programming to
-            improve efficiency.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea short"
-          name="q32"
-          placeholder="Transition word or phrase..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="H" data-type="short">
-        <div class="question-number">Question 33</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The API supports both JSON and XML response formats.
-            ____________, most developers prefer JSON for its
-            simplicity.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea short"
-          name="q33"
-          placeholder="Transition word or phrase..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="H" data-type="short">
-        <div class="question-number">Question 34</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;Unit tests passed on all modules. ____________, the
-            integration tests revealed two critical failures.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea short"
-          name="q34"
-          placeholder="Transition word or phrase..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="H" data-type="short">
-        <div class="question-number">Question 35</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The team considered building the feature in-house.
-            ____________, they decided to use an open-source library because it
-            was already well-tested.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea short"
-          name="q35"
-          placeholder="Transition word or phrase..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="H" data-type="short">
-        <div class="question-number">Question 36</div>
-        <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The database handles read-heavy workloads efficiently. It is
-            ____________ not optimized for frequent writes.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea short"
-          name="q36"
-          placeholder="Transition word or phrase..."
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION I: Topic Sentences ============ -->
-      <div class="section-header">
-        <h2>Section I: Topic Sentences</h2>
-        <div class="section-desc">
-          A good topic sentence makes a clear, specific claim. Choose the
-          stronger option, then write your own.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="I" data-correct="B">
-        <div class="question-number">Question 37</div>
-        <div class="question-text">Which is the stronger topic sentence?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q37" value="A" /> Several factors must be
-            considered in the evaluation of system performance.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q37" value="B" /> System performance
-            depends primarily on latency, throughput, and fault
-            tolerance.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="I" data-correct="B">
-        <div class="question-number">Question 38</div>
-        <div class="question-text">Which is the stronger topic sentence?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q38" value="A" /> Recent advances in
-            distributed computing have led to increased interest in scalable
-            architectures.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q38" value="B" /> Scalable distributed
-            systems must balance communication overhead, synchronization cost,
-            and fault tolerance.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="I" data-correct="B">
-        <div class="question-number">Question 39</div>
-        <div class="question-text">Which is the stronger topic sentence?</div>
-        <div class="options">
-          <label class="option-label"
-            ><input type="radio" name="q39" value="A" /> There are many
-            approaches to handling missing data in machine learning
-            pipelines.</label
-          >
-          <label class="option-label"
-            ><input type="radio" name="q39" value="B" /> Imputation outperforms
-            deletion for handling missing data when the missingness is not
-            random.</label
-          >
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="question-card" data-section="I" data-type="short">
-        <div class="question-number">Question 40</div>
-        <div class="question-text">
-          Improve this weak topic sentence by making it specific and
-          claim-driven:
-          <span class="quoted"
-            >&ldquo;Security is an important consideration in web application
-            development.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q40"
-          placeholder="Write a stronger topic sentence..."
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION J: Information Flow & Emphasis ============ -->
-      <div class="section-header">
-        <h2>Section J: Information Flow and Emphasis</h2>
-        <div class="section-desc">
-          Good prose moves from familiar to new information, and places the most
-          important point at the end (the &ldquo;stress position&rdquo;).
-          Rewrite each example to improve flow.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="J" data-type="short">
-        <div class="question-number">Question 41</div>
-        <div class="question-text">
-          Rewrite for better flow:
-          <span class="quoted"
-            >&ldquo;A significant improvement in accuracy was observed after
-            parameter tuning. The model&rsquo;s hyperparameters were adjusted
-            using cross-validation.&rdquo;</span
-          ><span class="hint"
-            >Hint: put the cause before the effect, and lead with familiar
-            information.</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q41"
-          placeholder="Write your revised version..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="J" data-type="short">
-        <div class="question-number">Question 42</div>
-        <div class="question-text">
-          Rewrite for better flow:
-          <span class="quoted"
-            >&ldquo;An increase in training time was caused by the addition of
-            regularization terms. The model complexity increased as a
-            result.&rdquo;</span
-          ><span class="hint"
-            >Hint: combine into one sentence with a logical cause &rarr; effect
-            flow.</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q42"
-          placeholder="Write your revised version..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="J" data-type="short">
-        <div class="question-number">Question 43</div>
-        <div class="question-text">
-          Rewrite for better emphasis:
-          <span class="quoted"
-            >&ldquo;In addition to being more efficient, the algorithm is also
-            faster and uses fewer resources and has better accuracy than
-            previous approaches.&rdquo;</span
-          ><span class="hint"
-            >Hint: the most important point should come last, in the stress
-            position. Decide what matters most.</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q43"
-          placeholder="Write your revised version..."
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION K: Paragraph Diagnosis ============ -->
-      <div class="section-header">
-        <h2>Section K: Paragraph Diagnosis</h2>
-        <div class="section-desc">
-          Read the following paragraph and answer the questions below it.
-        </div>
-      </div>
-
-      <div
-        class="question-card"
-        data-section="K"
-        data-type="short"
-        style="border-left-color: var(--accent)"
-      >
-        <div class="passage-box">
-          The proposed framework integrates multiple modules for data
-          preprocessing, feature extraction, and classification. Experimental
-          results demonstrate improved performance across benchmark datasets.
-          The architecture is flexible and can be extended to additional tasks.
-          Training was conducted using standard optimization techniques.
-        </div>
-        <div class="question-number">Question 44</div>
-        <div class="question-text">
-          What is this paragraph&rsquo;s main claim? Write it in one sentence.
-          (If there is no clear main claim, say so.)
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q44"
-          placeholder="Main claim..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="K" data-type="short">
-        <div class="question-number">Question 45</div>
-        <div class="question-text">
-          This paragraph is trying to do too many jobs at once. List the
-          separate jobs it attempts.
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q45"
-          placeholder="List the jobs..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="K" data-type="short">
-        <div class="question-number">Question 46</div>
-        <div class="question-text">
-          Rewrite this as two shorter paragraphs, each with a single clear job.
-          You may add a sentence or two to make each paragraph coherent.
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q46"
-          placeholder="Paragraph 1:&#10;&#10;Paragraph 2:"
-          style="min-height: 140px"
-        ></textarea>
-      </div>
-
-      <!-- ============ SECTION L: Full Revision ============ -->
-      <div class="section-header">
-        <h2>Section L: Full Revision</h2>
-        <div class="section-desc">
-          Rewrite each passage to improve clarity. Apply everything: cut
-          clutter, use strong verbs, fix voice, improve flow.
-        </div>
-      </div>
-
-      <div class="question-card" data-section="L" data-type="short">
-        <div class="question-number">Question 47</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;What the system does is it takes the input that the user
-            provides and then it processes it and after that it returns the
-            output to the user.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q47"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="L" data-type="short">
-        <div class="question-number">Question 48</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;It should be noted that in the event that the connection
-            times out, the system will attempt to retry the connection a total
-            of three times before it gives up and throws an error.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q48"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <div class="question-card" data-section="L" data-type="short">
-        <div class="question-number">Question 49</div>
-        <div class="question-text">
-          Rewrite:
-          <span class="quoted"
-            >&ldquo;The reason why we chose Python for this project is because
-            Python has a large number of machine learning libraries available
-            that can be used.&rdquo;</span
-          >
-        </div>
-        <textarea
-          class="answer-textarea"
-          name="q49"
-          placeholder="Write your revised sentence..."
-        ></textarea>
-      </div>
-
-      <!-- Submit -->
-      <div class="submit-section">
-        <button class="submit-btn" id="submitBtn" onclick="gradeForm()">
-          Submit &amp; Grade
-        </button>
-      </div>
-
+        <!-- Submit -->
+        <div class="submit-section">
+          <button class="submit-btn" id="submitBtn" onclick="gradeForm()">
+            Submit &amp; Grade
+          </button>
+        </div>
+      </form>
       <!-- Results -->
       <div class="results-card" id="resultsCard">
         <h2>Results</h2>
@@ -1825,6 +1841,42 @@
           );
         });
       }
+
+      const form = document.getElementById("diagnostic-1");
+
+      const status = document.getElementById("form-status");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        status.innerText = "submitting...";
+
+        const data = new FormData(form);
+
+        // Your Google Script URL
+
+        const action =
+          "https://script.google.com/macros/s/AKfycbxFKeZx14i-XdyuLui_zfOFmZmWjZvsNDfMjaTNXtObOb5al8cJt20HhJebkxEEmz9h/exec";
+
+        fetch(action, {
+          method: "POST",
+
+          body: data,
+
+          mode: "no-cors",
+        })
+          .then(() => {
+            status.innerText = "success";
+
+            form.reset();
+          })
+
+          .catch((error) => {
+            status.innerText = "Oops! There was a problem.";
+
+            console.error("Error:", error);
+          });
+      });
     </script>
   </body>
 </html>
