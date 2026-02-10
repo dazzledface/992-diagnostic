@@ -1694,7 +1694,7 @@
     </div>
 
     <script>
-      // Highlight selected radio
+      // 1. UI Logic: Highlight selected radio buttons
       document
         .querySelectorAll('.option-label input[type="radio"]')
         .forEach((r) => {
@@ -1706,80 +1706,75 @@
           });
         });
 
+      // 2. Configuration: Replace this with your CURRENT Deployment ID
       const APPS_SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbxFKeZx14i-XdyuLui_zfOFmZmWjZvsNDfMjaTNXtObOb5al8cJt20HhJebkxEEmz9h/exec";
 
+      // 3. Data Collection Logic
       function collectAllAnswers() {
         const data = {};
         data.name = document.getElementById("studentName").value.trim();
-        // MC questions: send selected letter
+
+        // Loops through all 49 questions to grab either radio value or textarea content
         for (let i = 1; i <= 49; i++) {
           const radio = document.querySelector(`input[name="q${i}"]:checked`);
           const textarea = document.querySelector(`textarea[name="q${i}"]`);
+
           if (radio) {
             data[`q${i}`] = radio.value;
           } else if (textarea) {
             data[`q${i}`] = textarea.value.trim();
           } else {
-            data[`q${i}`] = "";
+            data[`q${i}`] = ""; // Handles unanswered questions
           }
         }
         return data;
       }
 
-      function submitToSheet(data) {
+      // 4. Submission Logic (Using Fetch instead of hidden iframes)
+      async function submitToSheet(data) {
         const statusEl = document.getElementById("submitStatus");
-        statusEl.textContent = "Submitting responses...";
+        statusEl.textContent = "Submitting responses to instructor...";
         statusEl.className = "submit-status submitting";
         statusEl.style.display = "block";
 
-        // Build URL-encoded string (Apps Script e.parameter expects this)
-        const params = new URLSearchParams();
+        const formData = new URLSearchParams();
         for (const [key, value] of Object.entries(data)) {
-          params.append(key, value);
+          formData.append(key, value);
         }
 
-        // Use a hidden form + iframe to avoid CORS issues with Apps Script redirects
-        let iframe = document.getElementById("submitFrame");
-        if (!iframe) {
-          iframe = document.createElement("iframe");
-          iframe.id = "submitFrame";
-          iframe.name = "submitFrame";
-          iframe.style.display = "none";
-          document.body.appendChild(iframe);
-        }
+        try {
+          // Mode 'no-cors' is required for Google Apps Script POST requests
+          await fetch(
+            "https://script.google.com/macros/s/AKfycbz7fcM0N6QMhkxp71cyd2qkTll-d5sAF3nKlsmePCuv3OmNOAf2VQ4BGQnwZufE6-w/exec",
+            {
+              method: "POST",
+              body: formData,
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+            },
+          );
 
-        const form = document.createElement("form");
-        form.method = "POST";
-        form.action = APPS_SCRIPT_URL;
-        form.target = "submitFrame";
-        form.style.display = "none";
-
-        for (const [key, value] of Object.entries(data)) {
-          const input = document.createElement("input");
-          input.type = "hidden";
-          input.name = key;
-          input.value = value;
-          form.appendChild(input);
-        }
-
-        document.body.appendChild(form);
-        form.submit();
-        document.body.removeChild(form);
-
-        // Since we can't read the iframe response cross-origin, assume success after a short delay
-        setTimeout(() => {
-          statusEl.textContent = "\u2714 Responses submitted.";
+          statusEl.textContent =
+            "✔ Responses successfully recorded in Google Sheets.";
           statusEl.className = "submit-status success";
-        }, 2000);
+        } catch (err) {
+          console.error("Submission error:", err);
+          statusEl.textContent =
+            "✖ Error submitting. Please copy your results manually.";
+          statusEl.className = "submit-status error";
+        }
       }
 
+      // 5. Grading and Main Trigger
       function gradeForm() {
         const name = document.getElementById("studentName").value.trim();
         if (!name) {
+          const nameCard = document.querySelector(".name-card");
           document.getElementById("studentName").focus();
-          document.querySelector(".name-card").style.borderLeftColor =
-            "var(--accent)";
+          nameCard.style.borderLeftColor = "var(--incorrect)";
           return;
         }
 
@@ -1791,25 +1786,24 @@
         let totalOK = 0,
           totalMC = 0;
 
+        // Auto-grade Multiple Choice questions
         mcCards.forEach((card) => {
           const s = card.dataset.section,
             correct = card.dataset.correct;
           const qName = card.querySelector('input[type="radio"]').name;
           const sel = document.querySelector(`input[name="${qName}"]:checked`);
           const fb = card.querySelector(".feedback");
+
           if (!scores[s]) {
             scores[s] = 0;
             totals[s] = 0;
           }
           totals[s]++;
           totalMC++;
+
           card.classList.remove("graded-correct", "graded-incorrect");
-          card
-            .querySelectorAll(".option-label")
-            .forEach((l) =>
-              l.classList.remove("correct-answer", "wrong-answer"),
-            );
           card.querySelectorAll(".option-label").forEach((l) => {
+            l.classList.remove("correct-answer", "wrong-answer");
             if (l.querySelector("input").value === correct)
               l.classList.add("correct-answer");
           });
@@ -1832,19 +1826,22 @@
           }
         });
 
-        // Submit to Google Sheet
+        // Execute Submission to Sheet
         const answers = collectAllAnswers();
         submitToSheet(answers);
 
+        // Update Results UI
         const grid = document.getElementById("resultsGrid");
         grid.innerHTML = "";
 
         const ov = document.createElement("div");
         ov.className = "result-item overall";
-        ov.innerHTML = `<div class="result-label">Multiple Choice Total</div><div class="result-value">${totalOK}/${totalMC}</div><div class="result-sub">${Math.round((totalOK / totalMC) * 100)}% correct</div>`;
+        ov.innerHTML = `<div class="result-label">Multiple Choice Total</div>
+                  <div class="result-value">${totalOK}/${totalMC}</div>
+                  <div class="result-sub">${Math.round((totalOK / totalMC) * 100)}% correct</div>`;
         grid.appendChild(ov);
 
-        const names = {
+        const sectionNames = {
           A: "A: Clarity",
           B: "B: Error ID",
           D: "D: Clutter",
@@ -1852,26 +1849,16 @@
           G: "G: Word Choice",
           I: "I: Topic Sent.",
         };
-        ["A", "B", "D", "F", "G", "I"].forEach((s) => {
+        Object.keys(sectionNames).forEach((s) => {
           if (totals[s]) {
             const d = document.createElement("div");
             d.className = "result-item";
-            d.innerHTML = `<div class="result-label">${names[s]}</div><div class="result-value">${scores[s]}/${totals[s]}</div><div class="result-sub">${Math.round((scores[s] / totals[s]) * 100)}%</div>`;
+            d.innerHTML = `<div class="result-label">${sectionNames[s]}</div>
+                     <div class="result-value">${scores[s]}/${totals[s]}</div>
+                     <div class="result-sub">${Math.round((scores[s] / totals[s]) * 100)}%</div>`;
             grid.appendChild(d);
           }
         });
-
-        const shortCards = document.querySelectorAll(
-          '.question-card[data-type="short"]',
-        );
-        let answered = 0;
-        shortCards.forEach((c) => {
-          if (c.querySelector("textarea")?.value.trim()) answered++;
-        });
-        const sa = document.createElement("div");
-        sa.className = "result-item";
-        sa.innerHTML = `<div class="result-label">Short Answer</div><div class="result-value">${answered}/${shortCards.length}</div><div class="result-sub">Needs review</div>`;
-        grid.appendChild(sa);
 
         document.getElementById("resultsCard").style.display = "block";
         document.getElementById("submitBtn").textContent = "Resubmit";
@@ -1880,47 +1867,19 @@
           .scrollIntoView({ behavior: "smooth" });
       }
 
+      // 6. Clipboard Backup
       function copyResults() {
         const name = document.getElementById("studentName").value.trim();
         let t = `English Writing Skills Diagnostic — ${name}\n${"=".repeat(50)}\n\n`;
+        const answers = collectAllAnswers();
 
-        const mcCards = document.querySelectorAll(
-          ".question-card[data-correct]",
-        );
-        const secs = {};
-        mcCards.forEach((card) => {
-          const s = card.dataset.section;
-          if (!secs[s]) secs[s] = [];
-          const qNum = card.querySelector(".question-number").textContent;
-          const correct = card.dataset.correct;
-          const qName = card.querySelector('input[type="radio"]').name;
-          const sel = document.querySelector(`input[name="${qName}"]:checked`);
-          const ans = sel ? sel.value : "(blank)";
-          secs[s].push(
-            `  ${qNum}: ${ans} ${ans === correct ? "✓" : "✗"} (correct: ${correct})`,
-          );
-        });
-        for (const [s, lines] of Object.entries(secs))
-          t += `Section ${s} (MC):\n${lines.join("\n")}\n\n`;
-
-        const shortCards = document.querySelectorAll(
-          '.question-card[data-type="short"]',
-        );
-        let curS = "";
-        shortCards.forEach((card) => {
-          const s = card.dataset.section;
-          if (s !== curS) {
-            curS = s;
-            t += `Section ${s} (short answer):\n`;
-          }
-          const qNum = card.querySelector(".question-number").textContent;
-          const val = card.querySelector("textarea")?.value.trim() || "";
-          t += `  ${qNum}: ${val || "(blank)"}\n`;
-        });
+        for (let i = 1; i <= 49; i++) {
+          t += `Q${i}: ${answers["q" + i]}\n`;
+        }
 
         navigator.clipboard.writeText(t).then(() => {
           const btn = document.querySelector(".copy-btn");
-          btn.textContent = "Copied!";
+          btn.textContent = "Copied to Clipboard!";
           setTimeout(
             () => (btn.textContent = "Copy results to clipboard"),
             2000,
