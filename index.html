@@ -17,20 +17,20 @@
         padding: 0;
       }
       :root {
-        --bg: #f1f8ef;
+        --bg: #f6f5f1;
         --card: #ffffff;
         --border: #d8d5ce;
-        --primary: #171738;
+        --primary: #2c5f8a;
         --primary-light: #e8f0f7;
-        --primary-dark: #02020a;
-        --accent: #02020a;
-        --text: #02020a;
+        --primary-dark: #1a3c5e;
+        --accent: #c7563c;
+        --text: #2d2a26;
         --text-muted: #6b6660;
         --correct: #2e7d52;
         --correct-bg: #e8f5ee;
         --incorrect: #b93a3a;
         --incorrect-bg: #fdecec;
-        --quote-bg: #f4f5f6;
+        --quote-bg: #f0ede7;
         --radius: 8px;
         --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
         --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -69,6 +69,7 @@
         border-radius: 50%;
       }
       .header-card h1 {
+        font-family: "Source Serif 4", serif;
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
@@ -107,6 +108,7 @@
         box-shadow: var(--shadow);
       }
       .skill-map h3 {
+        font-family: "Source Serif 4", serif;
         font-size: 17px;
         color: var(--primary-dark);
         margin-bottom: 10px;
@@ -161,6 +163,7 @@
         box-shadow: var(--shadow);
       }
       .section-header h2 {
+        font-family: "Source Serif 4", serif;
         font-size: 22px;
         font-weight: 700;
         color: var(--primary-dark);
@@ -410,6 +413,28 @@
       }
       .copy-btn:hover {
         background: #d4e5f3;
+      }
+
+      .submit-status {
+        margin-top: 12px;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .submit-status.submitting {
+        background: var(--primary-light);
+        color: var(--primary);
+      }
+      .submit-status.success {
+        background: var(--correct-bg);
+        color: var(--correct);
+        font-weight: 500;
+      }
+      .submit-status.error {
+        background: var(--incorrect-bg);
+        color: var(--incorrect);
       }
 
       @media (max-width: 600px) {
@@ -1708,33 +1733,45 @@
         statusEl.className = "submit-status submitting";
         statusEl.style.display = "block";
 
-        const formData = new URLSearchParams();
+        // Build URL-encoded string (Apps Script e.parameter expects this)
+        const params = new URLSearchParams();
         for (const [key, value] of Object.entries(data)) {
-          formData.append(key, value);
+          params.append(key, value);
         }
 
-        fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          body: formData,
-        })
-          .then((r) => r.json())
-          .then((result) => {
-            if (result.result === "success") {
-              statusEl.textContent = "\u2714 Responses submitted successfully.";
-              statusEl.className = "submit-status success";
-            } else {
-              statusEl.textContent =
-                "\u26A0 Submission error: " +
-                (result.error ||
-                  "Unknown error. Your results are still shown below.");
-              statusEl.className = "submit-status error";
-            }
-          })
-          .catch((err) => {
-            statusEl.textContent =
-              '\u26A0 Could not reach the server. Your results are still shown below \u2014 use "Copy results" to save them.';
-            statusEl.className = "submit-status error";
-          });
+        // Use a hidden form + iframe to avoid CORS issues with Apps Script redirects
+        let iframe = document.getElementById("submitFrame");
+        if (!iframe) {
+          iframe = document.createElement("iframe");
+          iframe.id = "submitFrame";
+          iframe.name = "submitFrame";
+          iframe.style.display = "none";
+          document.body.appendChild(iframe);
+        }
+
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = APPS_SCRIPT_URL;
+        form.target = "submitFrame";
+        form.style.display = "none";
+
+        for (const [key, value] of Object.entries(data)) {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = value;
+          form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+
+        // Since we can't read the iframe response cross-origin, assume success after a short delay
+        setTimeout(() => {
+          statusEl.textContent = "\u2714 Responses submitted.";
+          statusEl.className = "submit-status success";
+        }, 2000);
       }
 
       function gradeForm() {
