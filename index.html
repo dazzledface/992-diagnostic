@@ -8,454 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      :root {
-        --bg: #f6f5f1;
-        --card: #ffffff;
-        --border: #d8d5ce;
-        --primary: #2c5f8a;
-        --primary-light: #e8f0f7;
-        --primary-dark: #1a3c5e;
-        --accent: #c7563c;
-        --text: #2d2a26;
-        --text-muted: #6b6660;
-        --correct: #2e7d52;
-        --correct-bg: #e8f5ee;
-        --incorrect: #b93a3a;
-        --incorrect-bg: #fdecec;
-        --quote-bg: #f0ede7;
-        --radius: 8px;
-        --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-        --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
-      }
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        min-height: 100vh;
-      }
-      .container {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 24px 16px 80px;
-      }
-
-      .header-card {
-        background: var(--primary-dark);
-        color: white;
-        border-radius: var(--radius);
-        padding: 40px 36px 32px;
-        margin-bottom: 12px;
-        box-shadow: var(--shadow-lg);
-        position: relative;
-        overflow: hidden;
-      }
-      .header-card::before {
-        content: "";
-        position: absolute;
-        top: -40px;
-        right: -40px;
-        width: 180px;
-        height: 180px;
-        background: rgba(255, 255, 255, 0.04);
-        border-radius: 50%;
-      }
-      .header-card h1 {
-        font-family: "Source Serif 4", serif;
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 4px;
-        letter-spacing: -0.3px;
-      }
-      .header-card .subtitle {
-        font-size: 15px;
-        opacity: 0.8;
-      }
-
-      .info-card {
-        background: var(--card);
-        border-radius: var(--radius);
-        border-top: 3px solid var(--primary);
-        padding: 28px 32px;
-        margin-bottom: 12px;
-        box-shadow: var(--shadow);
-      }
-      .info-card p {
-        margin-bottom: 10px;
-        font-size: 14.5px;
-      }
-      .info-card p:last-child {
-        margin-bottom: 0;
-      }
-      .info-card strong {
-        font-weight: 600;
-      }
-
-      .skill-map {
-        background: var(--card);
-        border-radius: var(--radius);
-        border-left: 4px solid var(--accent);
-        padding: 24px 32px;
-        margin-bottom: 24px;
-        box-shadow: var(--shadow);
-      }
-      .skill-map h3 {
-        font-family: "Source Serif 4", serif;
-        font-size: 17px;
-        color: var(--primary-dark);
-        margin-bottom: 10px;
-      }
-      .skill-map p {
-        font-size: 13.5px;
-        margin-bottom: 6px;
-        color: var(--text-muted);
-      }
-      .skill-map .map-label {
-        font-weight: 600;
-        color: var(--text);
-      }
-
-      .name-card {
-        background: var(--card);
-        border-radius: var(--radius);
-        padding: 24px 32px;
-        margin-bottom: 24px;
-        box-shadow: var(--shadow);
-        border-left: 4px solid var(--primary);
-      }
-      .name-card label {
-        display: block;
-        font-weight: 600;
-        font-size: 15px;
-        margin-bottom: 8px;
-      }
-      .name-card input {
-        width: 100%;
-        padding: 10px 14px;
-        border: 1.5px solid var(--border);
-        border-radius: 6px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 15px;
-        transition: border-color 0.2s;
-        background: var(--bg);
-      }
-      .name-card input:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px var(--primary-light);
-      }
-
-      .section-header {
-        background: var(--card);
-        border-radius: var(--radius);
-        border-top: 3px solid var(--accent);
-        padding: 24px 32px;
-        margin-top: 32px;
-        margin-bottom: 4px;
-        box-shadow: var(--shadow);
-      }
-      .section-header h2 {
-        font-family: "Source Serif 4", serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--primary-dark);
-        margin-bottom: 6px;
-      }
-      .section-header .section-desc {
-        font-size: 14px;
-        color: var(--text-muted);
-        font-style: italic;
-      }
-
-      .question-card {
-        background: var(--card);
-        border-radius: var(--radius);
-        padding: 24px 32px;
-        margin-bottom: 4px;
-        box-shadow: var(--shadow);
-        transition: border-color 0.3s;
-        border-left: 4px solid transparent;
-      }
-      .question-card.graded-correct {
-        border-left-color: var(--correct);
-        background: var(--correct-bg);
-      }
-      .question-card.graded-incorrect {
-        border-left-color: var(--incorrect);
-        background: var(--incorrect-bg);
-      }
-
-      .question-number {
-        font-weight: 700;
-        color: var(--primary);
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 6px;
-      }
-      .question-text {
-        font-size: 15px;
-        font-weight: 500;
-        margin-bottom: 16px;
-        line-height: 1.55;
-      }
-      .question-text .quoted {
-        display: block;
-        margin-top: 8px;
-        padding: 10px 14px;
-        background: var(--quote-bg);
-        border-radius: 6px;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 14.5px;
-        line-height: 1.6;
-      }
-      .question-text .hint {
-        display: block;
-        margin-top: 8px;
-        font-size: 13.5px;
-        color: var(--text-muted);
-        font-weight: 400;
-        font-style: italic;
-      }
-
-      .options {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .option-label {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 10px 14px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.15s;
-        font-size: 14.5px;
-        line-height: 1.5;
-        border: 1.5px solid transparent;
-      }
-      .option-label:hover {
-        background: var(--primary-light);
-      }
-      .option-label input[type="radio"] {
-        margin-top: 3px;
-        accent-color: var(--primary);
-        flex-shrink: 0;
-      }
-      .option-label.selected {
-        background: var(--primary-light);
-        border-color: var(--primary);
-      }
-      .option-label.correct-answer {
-        background: var(--correct-bg) !important;
-        border-color: var(--correct) !important;
-      }
-      .option-label.wrong-answer {
-        background: var(--incorrect-bg) !important;
-        border-color: var(--incorrect) !important;
-      }
-
-      .answer-textarea {
-        width: 100%;
-        min-height: 72px;
-        padding: 12px 14px;
-        border: 1.5px solid var(--border);
-        border-radius: 6px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 14.5px;
-        line-height: 1.55;
-        resize: vertical;
-        transition: border-color 0.2s;
-        background: var(--bg);
-      }
-      .answer-textarea:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px var(--primary-light);
-      }
-      .answer-textarea.short {
-        min-height: 44px;
-      }
-
-      .feedback {
-        margin-top: 12px;
-        padding: 10px 14px;
-        border-radius: 6px;
-        font-size: 13.5px;
-        line-height: 1.5;
-        display: none;
-      }
-      .feedback.correct {
-        background: var(--correct-bg);
-        color: var(--correct);
-        display: block;
-      }
-      .feedback.incorrect {
-        background: var(--incorrect-bg);
-        color: var(--incorrect);
-        display: block;
-      }
-
-      .passage-box {
-        background: var(--quote-bg);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 16px 20px;
-        margin-bottom: 20px;
-        font-size: 14.5px;
-        line-height: 1.65;
-      }
-
-      .submit-section {
-        margin-top: 32px;
-        text-align: center;
-      }
-      .submit-btn {
-        font-family: "DM Sans", sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        color: white;
-        background: var(--primary);
-        border: none;
-        border-radius: 6px;
-        padding: 14px 48px;
-        cursor: pointer;
-        transition:
-          background 0.2s,
-          transform 0.1s;
-        box-shadow: var(--shadow);
-      }
-      .submit-btn:hover {
-        background: var(--primary-dark);
-      }
-      .submit-btn:active {
-        transform: scale(0.98);
-      }
-
-      .results-card {
-        display: none;
-        background: var(--card);
-        border-radius: var(--radius);
-        border-top: 3px solid var(--correct);
-        padding: 28px 32px;
-        margin-top: 20px;
-        box-shadow: var(--shadow-lg);
-      }
-      .results-card h2 {
-        font-family: "Source Serif 4", serif;
-        font-size: 22px;
-        color: var(--primary-dark);
-        margin-bottom: 16px;
-      }
-      .results-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      .result-item {
-        padding: 12px 14px;
-        background: var(--bg);
-        border-radius: 6px;
-      }
-      .result-item .result-label {
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 2px;
-      }
-      .result-item .result-value {
-        font-family: "Source Serif 4", serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--primary-dark);
-      }
-      .result-item .result-sub {
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-      .result-item.overall {
-        grid-column: 1 / -1;
-        text-align: center;
-      }
-      .results-note {
-        font-size: 13.5px;
-        color: var(--text-muted);
-        padding-top: 16px;
-        border-top: 1px solid var(--border);
-        line-height: 1.6;
-      }
-
-      .copy-btn {
-        font-family: "DM Sans", sans-serif;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--primary);
-        background: var(--primary-light);
-        border: 1.5px solid var(--primary);
-        border-radius: 6px;
-        padding: 8px 20px;
-        cursor: pointer;
-        margin-top: 16px;
-        transition: background 0.15s;
-      }
-      .copy-btn:hover {
-        background: #d4e5f3;
-      }
-
-      .submit-status {
-        margin-top: 12px;
-        padding: 10px 16px;
-        border-radius: 6px;
-        font-size: 14px;
-        text-align: center;
-        transition: all 0.3s;
-      }
-      .submit-status.submitting {
-        background: var(--primary-light);
-        color: var(--primary);
-      }
-      .submit-status.success {
-        background: var(--correct-bg);
-        color: var(--correct);
-        font-weight: 500;
-      }
-      .submit-status.error {
-        background: var(--incorrect-bg);
-        color: var(--incorrect);
-      }
-
-      @media (max-width: 600px) {
-        .container {
-          padding: 12px 8px 60px;
-        }
-        .header-card,
-        .info-card,
-        .name-card,
-        .section-header,
-        .question-card,
-        .results-card,
-        .skill-map {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        .results-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
@@ -469,9 +22,8 @@
       <div class="info-card">
         <p>
           This diagnostic tests your ability to recognize and fix common writing
-          issues in technical English. It covers topics from both Principles of
-          Effective Writing lectures: sentence-level clarity (Lecture I) and
-          paragraph-level clarity (Lecture II).
+          issues in technical English. It covers topics from our Principles of
+          Effective Writing lectures.
         </p>
         <p>
           <strong>Format:</strong> Twelve sections. Some are multiple choice;
@@ -484,11 +36,11 @@
           penalty for guessing.
         </p>
       </div>
-
+      <!--
       <div class="skill-map">
         <h3>Skill Map</h3>
         <p>
-          <span class="map-label">Sentence-level (Lecture I):</span> A&ndash;E,
+          <span class="map-label">Sentence-level:</span> A&ndash;E,
           G, L
         </p>
         <p style="margin-left: 16px; font-size: 12.5px">
@@ -497,7 +49,7 @@
           voice &amp; SVO (E) &bull; Word choice (G)
         </p>
         <p>
-          <span class="map-label">Paragraph-level (Lecture II):</span> H&ndash;K
+          <span class="map-label">Paragraph-level:</span> H&ndash;K
         </p>
         <p style="margin-left: 16px; font-size: 12.5px">
           Transitions (H) &bull; Topic sentences (I) &bull; Information flow
@@ -508,6 +60,7 @@
           Full revision (L)
         </p>
       </div>
+   -->
 
       <div class="name-card">
         <label for="studentName"
@@ -592,7 +145,7 @@
             deploying.</label
           >
           <label class="option-label"
-            ><input type="radio" name="q3" value="B" /> Before deploying,
+            ><input type="radio" name="q3" value="B" /> Before deployment,
             consider several factors.</label
           >
           <label class="option-label"
@@ -667,10 +220,10 @@
       <div class="question-card" data-section="B" data-correct="B">
         <div class="question-number">Question 6</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The data shows that the system performed well, the response
-            times were under 50ms.&rdquo;</span
-          >
+          <span class="quoted">
+            The data shows that the system performed well, the response times
+            were under 50ms.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -693,10 +246,9 @@
       <div class="question-card" data-section="B" data-correct="B">
         <div class="question-number">Question 7</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;After running the tests, the results were
-            promising.&rdquo;</span
-          >
+          <span class="quoted">
+            After running the tests, the results were promising.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -719,10 +271,10 @@
       <div class="question-card" data-section="B" data-correct="C">
         <div class="question-number">Question 8</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;Each developer should commit their code before the end of
-            the sprint.&rdquo;</span
-          >
+          <span class="quoted">
+            Each developer should commit their code before the end of the
+            sprint.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -746,10 +298,10 @@
       <div class="question-card" data-section="B" data-correct="B">
         <div class="question-number">Question 9</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The team has decided to delay the release, however, more
-            testing is needed.&rdquo;</span
-          >
+          <span class="quoted">
+            The team has decided to delay the release, however, more testing is
+            needed.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -773,10 +325,10 @@
       <div class="question-card" data-section="B" data-correct="A">
         <div class="question-number">Question 10</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The API, along with its documentation and sample code, are
-            available on the developer portal.&rdquo;</span
-          >
+          <span class="quoted">
+            The API, along with its documentation and sample code, are available
+            on the developer portal.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -801,8 +353,8 @@
       <div class="section-header">
         <h2>Section C: Verb-to-Noun Conversion</h2>
         <div class="section-desc">
-          Each sentence contains verbs awkwardly turned into nouns
-          (&ldquo;nominalizations&rdquo;). Rewrite using strong verbs instead.
+          Each sentence contains verbs awkwardly turned into nouns (
+          nominalizations ). Rewrite using strong verbs instead.
         </div>
       </div>
 
@@ -810,11 +362,10 @@
         <div class="question-number">Question 11</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;The utilization of various methodologies for the assessment
-            of cellular proliferation rates was accomplished by the research
-            team.&rdquo;</span
-          >
+          <span class="quoted">
+            The utilization of various methodologies for the assessment of
+            cellular proliferation rates was accomplished by the research team.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -827,11 +378,10 @@
         <div class="question-number">Question 12</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;The establishment of communication between distributed
-            agents was achieved via the implementation of a lightweight
-            protocol.&rdquo;</span
-          >
+          <span class="quoted">
+            The establishment of communication between distributed agents was
+            achieved via the implementation of a lightweight protocol.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -844,11 +394,10 @@
         <div class="question-number">Question 13</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;In order to provide an enhancement to robustness, a
-            modification of the loss function was undertaken during the training
-            phase.&rdquo;</span
-          >
+          <span class="quoted">
+            In order to provide an enhancement to robustness, a modification of
+            the loss function was undertaken during the training phase.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -861,11 +410,11 @@
         <div class="question-number">Question 14</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;The incorporation of contextual information into the model
+          <span class="quoted">
+            The incorporation of contextual information into the model
             architecture allows for the facilitation of improved task
-            performance.&rdquo;</span
-          >
+            performance.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -887,11 +436,10 @@
         <div class="question-number">Question 15</div>
         <div class="question-text">
           Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;It is generally understood that the primary objective of the
-            investigation was the elucidation of the underlying
-            mechanisms.&rdquo;</span
-          >
+          <span class="quoted">
+            It is generally understood that the primary objective of the
+            investigation was the elucidation of the underlying mechanisms.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -904,10 +452,10 @@
         <div class="question-number">Question 16</div>
         <div class="question-text">
           Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;There are a large number of studies that indicate the
-            importance of sleep for overall health.&rdquo;</span
-          >
+          <span class="quoted">
+            There are a large number of studies that indicate the importance of
+            sleep for overall health.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -920,10 +468,10 @@
         <div class="question-number">Question 17</div>
         <div class="question-text">
           Identify the clutter type and rewrite:
-          <span class="quoted"
-            >&ldquo;The researchers did not believe the proposed algorithm was
-            ineffective at handling edge cases.&rdquo;</span
-          >
+          <span class="quoted">
+            The researchers did not believe the proposed algorithm was
+            ineffective at handling edge cases.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -936,10 +484,10 @@
         <div class="question-number">Question 18</div>
         <div class="question-text">
           Which is the clearest revision of:
-          <span class="quoted"
-            >&ldquo;Our DNN-based NLP pipeline achieves SOTA performance on
-            standard QoS benchmarks in CPS environments.&rdquo;</span
-          >
+          <span class="quoted">
+            Our DNN-based NLP pipeline achieves SOTA performance on standard QoS
+            benchmarks in CPS environments.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -973,7 +521,7 @@
         <div class="question-number">Question 19</div>
         <div class="question-text">
           What is the best substitute for:
-          <span class="quoted">&ldquo;due to the fact that&rdquo;</span>?
+          <span class="quoted"> due to the fact that </span>?
         </div>
         <div class="options">
           <label class="option-label"
@@ -1000,10 +548,9 @@
         <div class="question-text">
           Which best removes unnecessary adverbs?
           <span class="quoted"
-            >Original: &ldquo;The system very clearly and quite effectively
-            basically handles all of the really important edge
-            cases.&rdquo;</span
-          >
+            >Original: The system very clearly and quite effectively basically
+            handles all of the really important edge cases.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1039,10 +586,9 @@
         <div class="question-number">Question 21</div>
         <div class="question-text">
           Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;The experiment was conducted by the team using a modified
-            protocol.&rdquo;</span
-          >
+          <span class="quoted">
+            The experiment was conducted by the team using a modified protocol.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1055,11 +601,10 @@
         <div class="question-number">Question 22</div>
         <div class="question-text">
           Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;A decision was made to perform the evaluation using metrics
-            that are generally considered to be representative of real-world
-            scenarios.&rdquo;</span
-          >
+          <span class="quoted">
+            A decision was made to perform the evaluation using metrics that are
+            generally considered to be representative of real-world scenarios.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1072,11 +617,10 @@
         <div class="question-number">Question 23</div>
         <div class="question-text">
           Rewrite in active voice:
-          <span class="quoted"
-            >&ldquo;The results can be seen to suggest that there exists a
-            potential correlation between model complexity and observed
-            efficiency gains.&rdquo;</span
-          >
+          <span class="quoted">
+            The results can be seen to suggest that there exists a potential
+            correlation between model complexity and observed efficiency gains.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1181,10 +725,9 @@
       <div class="question-card" data-section="G" data-correct="A">
         <div class="question-number">Question 27</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The new caching layer significantly ______ response
-            times.&rdquo;</span
-          >
+          <span class="quoted">
+            The new caching layer significantly ______ response times.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1206,9 +749,9 @@
       <div class="question-card" data-section="G" data-correct="B">
         <div class="question-number">Question 28</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The test results are ______ our hypothesis.&rdquo;</span
-          >
+          <span class="quoted">
+            The test results are ______ our hypothesis.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1230,10 +773,9 @@
       <div class="question-card" data-section="G" data-correct="B">
         <div class="question-number">Question 29</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;______ the migration, all services will be temporarily
-            unavailable.&rdquo;</span
-          >
+          <span class="quoted">
+            ______ the migration, all services will be temporarily unavailable.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1256,10 +798,10 @@
       <div class="question-card" data-section="G" data-correct="A">
         <div class="question-number">Question 30</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;This approach is ______ the previous method because it uses
-            less memory.&rdquo;</span
-          >
+          <span class="quoted">
+            This approach is ______ the previous method because it uses less
+            memory.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1283,10 +825,9 @@
       <div class="question-card" data-section="G" data-correct="A">
         <div class="question-number">Question 31</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;We ______ the issue to a misconfigured firewall
-            rule.&rdquo;</span
-          >
+          <span class="quoted">
+            We ______ the issue to a misconfigured firewall rule.
+          </span>
         </div>
         <div class="options">
           <label class="option-label"
@@ -1316,11 +857,11 @@
       <div class="question-card" data-section="H" data-type="short">
         <div class="question-number">Question 32</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The initial implementation used a brute-force algorithm.
+          <span class="quoted">
+            The initial implementation used a brute-force algorithm.
             ____________, the team rewrote it using dynamic programming to
-            improve efficiency.&rdquo;</span
-          >
+            improve efficiency.
+          </span>
         </div>
         <textarea
           class="answer-textarea short"
@@ -1332,11 +873,10 @@
       <div class="question-card" data-section="H" data-type="short">
         <div class="question-number">Question 33</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The API supports both JSON and XML response formats.
-            ____________, most developers prefer JSON for its
-            simplicity.&rdquo;</span
-          >
+          <span class="quoted">
+            The API supports both JSON and XML response formats. ____________,
+            most developers prefer JSON for its simplicity.
+          </span>
         </div>
         <textarea
           class="answer-textarea short"
@@ -1348,10 +888,10 @@
       <div class="question-card" data-section="H" data-type="short">
         <div class="question-number">Question 34</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;Unit tests passed on all modules. ____________, the
-            integration tests revealed two critical failures.&rdquo;</span
-          >
+          <span class="quoted">
+            Unit tests passed on all modules. ____________, the integration
+            tests revealed two critical failures.
+          </span>
         </div>
         <textarea
           class="answer-textarea short"
@@ -1363,11 +903,11 @@
       <div class="question-card" data-section="H" data-type="short">
         <div class="question-number">Question 35</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The team considered building the feature in-house.
-            ____________, they decided to use an open-source library because it
-            was already well-tested.&rdquo;</span
-          >
+          <span class="quoted">
+            The team considered building the feature in-house. ____________,
+            they decided to use an open-source library because it was already
+            well-tested.
+          </span>
         </div>
         <textarea
           class="answer-textarea short"
@@ -1379,10 +919,10 @@
       <div class="question-card" data-section="H" data-type="short">
         <div class="question-number">Question 36</div>
         <div class="question-text">
-          <span class="quoted"
-            >&ldquo;The database handles read-heavy workloads efficiently. It is
-            ____________ not optimized for frequent writes.&rdquo;</span
-          >
+          <span class="quoted">
+            The database handles read-heavy workloads efficiently. It is
+            ____________ not optimized for frequent writes.
+          </span>
         </div>
         <textarea
           class="answer-textarea short"
@@ -1458,10 +998,10 @@
         <div class="question-text">
           Improve this weak topic sentence by making it specific and
           claim-driven:
-          <span class="quoted"
-            >&ldquo;Security is an important consideration in web application
-            development.&rdquo;</span
-          >
+          <span class="quoted">
+            Security is an important consideration in web application
+            development.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1475,8 +1015,8 @@
         <h2>Section J: Information Flow and Emphasis</h2>
         <div class="section-desc">
           Good prose moves from familiar to new information, and places the most
-          important point at the end (the &ldquo;stress position&rdquo;).
-          Rewrite each example to improve flow.
+          important point at the end (the stress position ). Rewrite each
+          example to improve flow.
         </div>
       </div>
 
@@ -1484,10 +1024,10 @@
         <div class="question-number">Question 41</div>
         <div class="question-text">
           Rewrite for better flow:
-          <span class="quoted"
-            >&ldquo;A significant improvement in accuracy was observed after
-            parameter tuning. The model&rsquo;s hyperparameters were adjusted
-            using cross-validation.&rdquo;</span
+          <span class="quoted">
+            A significant improvement in accuracy was observed after parameter
+            tuning. The model&rsquo;s hyperparameters were adjusted using
+            cross-validation. </span
           ><span class="hint"
             >Hint: put the cause before the effect, and lead with familiar
             information.</span
@@ -1504,10 +1044,9 @@
         <div class="question-number">Question 42</div>
         <div class="question-text">
           Rewrite for better flow:
-          <span class="quoted"
-            >&ldquo;An increase in training time was caused by the addition of
-            regularization terms. The model complexity increased as a
-            result.&rdquo;</span
+          <span class="quoted">
+            An increase in training time was caused by the addition of
+            regularization terms. The model complexity increased as a result. </span
           ><span class="hint"
             >Hint: combine into one sentence with a logical cause &rarr; effect
             flow.</span
@@ -1524,10 +1063,10 @@
         <div class="question-number">Question 43</div>
         <div class="question-text">
           Rewrite for better emphasis:
-          <span class="quoted"
-            >&ldquo;In addition to being more efficient, the algorithm is also
-            faster and uses fewer resources and has better accuracy than
-            previous approaches.&rdquo;</span
+          <span class="quoted">
+            In addition to being more efficient, the algorithm is also faster
+            and uses fewer resources and has better accuracy than previous
+            approaches. </span
           ><span class="hint"
             >Hint: the most important point should come last, in the stress
             position. Decide what matters most.</span
@@ -1613,11 +1152,11 @@
         <div class="question-number">Question 47</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;What the system does is it takes the input that the user
-            provides and then it processes it and after that it returns the
-            output to the user.&rdquo;</span
-          >
+          <span class="quoted">
+            What the system does is it takes the input that the user provides
+            and then it processes it and after that it returns the output to the
+            user.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1630,11 +1169,11 @@
         <div class="question-number">Question 48</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;It should be noted that in the event that the connection
-            times out, the system will attempt to retry the connection a total
-            of three times before it gives up and throws an error.&rdquo;</span
-          >
+          <span class="quoted">
+            It should be noted that in the event that the connection times out,
+            the system will attempt to retry the connection a total of three
+            times before it gives up and throws an error.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
@@ -1647,11 +1186,11 @@
         <div class="question-number">Question 49</div>
         <div class="question-text">
           Rewrite:
-          <span class="quoted"
-            >&ldquo;The reason why we chose Python for this project is because
-            Python has a large number of machine learning libraries available
-            that can be used.&rdquo;</span
-          >
+          <span class="quoted">
+            The reason why we chose Python for this project is because Python
+            has a large number of machine learning libraries available that can
+            be used.
+          </span>
         </div>
         <textarea
           class="answer-textarea"
